@@ -1,4 +1,11 @@
 package resttranscoder;
 
-public class SolTranscoder {
+import transcoder.Transcoder;
+
+
+public class SolTranscoder implements Transcoder {
+    @Override
+    public void transcode() {
+
+    }
 }
