@@ -2,3 +2,6 @@
 
 # ignore IDE config directory
 .idea
+.idea/
+*.iml
+
