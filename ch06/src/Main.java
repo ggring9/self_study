@@ -15,14 +15,16 @@ public class Main {
         Transcoder transcoder = new FfmpegTranscoder();
 
         // 상위 수준 모듈이 하위 수준 모듈을 사용할 수 있도록 Locator 초기화
-        Locator locator = new Locator(jobQueue, transcoder);
-        Locator.init(locator);
+//        Locator locator = new Locator(jobQueue, transcoder);
+//        Locator.init(locator);
 
         // 상위 수준 모듈 객체를 생성하고 실행
-        final Worker worker = new Worker();
-        Thread t = new Thread(()->worker.run());
+//        final Worker worker = new Worker();
+        final Worker worker = new Worker(jobQueue, transcoder);
+        Thread t = new Thread(() -> worker.run());
 
-        JobCLI cli = new JobCLI();
+//        JobCLI cli = new JobCLI();
+        JobCLI cli = new JobCLI(jobQueue);
         cli.interact();
     }
 }

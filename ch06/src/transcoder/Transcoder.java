@@ -1,5 +1,5 @@
 package transcoder;
 
 public interface Transcoder {
-    public void transcode();
+    void transcode(String source, String target);
 }

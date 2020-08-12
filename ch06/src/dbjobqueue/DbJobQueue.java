@@ -9,4 +9,14 @@ public class DbJobQueue implements JobQueue {
         // ...
         return null;
     }
+
+    @Override
+    public JobData addJob(JobData job) {
+        return null;
+    }
+
+    @Override
+    public JobData getJob() {
+        return null;
+    }
 }

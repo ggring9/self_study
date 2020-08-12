@@ -5,11 +5,17 @@ import transcoder.JobQueue;
 import transcoder.Locator;
 
 public class JobCLI {
+    private JobQueue jobQueue;
+
+    public JobCLI(JobQueue jobQueue) {
+        this.jobQueue = jobQueue;
+    }
+
     public void interact() {
         printInputSourceMessage();
         String source = getSourceFromConsole();
         printInputTargetMessage();
-        String target = getTragetFromConsole();
+        String target = getTargetFromConsole();
 
         JobQueue jobQueue = Locator.getInstance().getJobQueue(); // jobQueue를 구한다
         jobQueue.addJob(new JobData(source, target));
@@ -27,7 +33,7 @@ public class JobCLI {
         return null;
     }
 
-    private String getTragetFromConsole() {
+    private String getTargetFromConsole() {
         return null;
     }
 
